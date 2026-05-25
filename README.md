@@ -22,9 +22,9 @@ In testing, the stock antenna was able to receive approximately five nearby wate
 
 NooElec NESDR Mini SDR
 
-[https://www.amazon.ca/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/](https://amzn.to/4dQuXSq)
+[https://www.amazon.ca/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/](https://amzn.to/4dQuXSq) **Affiliate Link**
 
-![SDR Receiver](docs/screenshots/sdr-receiver.png)
+![SDR Receiver Screenshot](docs/screenshots/sdr-receiver.png)
 
 ## Software Required
 
@@ -34,20 +34,20 @@ This guide uses the rtl_433 fork maintained at:
 
 https://github.com/altontoth/rtl_433
 
-Download the Windows x64 release from your fork or build from source.
+Download the Windows x64 release or build from source.
 
 ## SDR Driver Installation
 
 1. Plug in the SDR.
-2. Download and run Zadig.
+2. Download and run [Zadig](https://zadig.akeo.ie/).
 3. Select **Options → List All Devices**.
-4. Select the RTL2832U device.
-5. Confirm the device shows as RTL2838UHIDIR or Bulk-In Interface 0.
-6. Install the WinUSB driver.
+4. Select the **RTL2832U device**.
+5. Confirm the device shows as **RTL2838UHIDIR or Bulk-In Interface 0**.
+6. Install the **WinUSB driver**.
 7. Wait for installation to complete.
 8. Disconnect and reconnect the SDR.
 
-![Driver Installation](docs/screenshots/sdr-install-zadig.png)
+![Driver Installation Screenshot](docs/screenshots/sdr-install-zadig.png)
 
 ## Identifying Your Meter
 
@@ -55,7 +55,7 @@ Open the meter box lid and locate the Neptune meter ID.
 
 Record the number exactly as shown.
 
-![Meter ID Location](docs/screenshots/meter-id-location.png)
+![Meter ID Location Example](docs/screenshots/meter-id-location.png)
 
 ## Reading All Meters Within Range
 
@@ -79,7 +79,7 @@ While rtl_433 is running:
 
 http://localhost:8433/
 
-![Live View](docs/screenshots/rtl433-live-view.png)
+![Live View Example](docs/screenshots/rtl433-live-view.png)
 
 ## Saving Data to Excel
 
@@ -91,7 +91,7 @@ readings.csv
 
 Open the file directly in Excel.
 
-![Excel Output](docs/screenshots/excel-output.png)
+![Excel Output Example](docs/screenshots/excel-output.png)
 
 ## Reading Only Your Meter
 
