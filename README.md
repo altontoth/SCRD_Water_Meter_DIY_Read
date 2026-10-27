@@ -1,4 +1,4 @@
-# SCRD Water Meter DIY Read
+# Water Meter DIY Read
 
 Read Sunshine Coast Regional District Neptune R900 water meters using a low-cost Software Defined Radio (SDR) receiver and the open-source rtl_433 software package.
 
@@ -22,9 +22,9 @@ In testing, the stock antenna was able to receive approximately five nearby wate
 
 NooElec NESDR Mini SDR
 
-[https://www.amazon.ca/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/](https://amzn.to/4dQuXSq) **Affiliate Link**
+https://www.amazon.ca/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/
 
-![SDR Receiver Screenshot](docs/screenshots/sdr-receiver.png)
+![SDR Receiver](docs/screenshots/sdr-receiver.png)
 
 ## Software Required
 
@@ -32,22 +32,29 @@ NooElec NESDR Mini SDR
 
 This guide uses the rtl_433 fork maintained at:
 
-https://github.com/altontoth/rtl_433
+https://github.com/merbanan/rtl_433
 
-Download the Windows x64 release or build from source.
+**Latest stable release:** https://github.com/merbanan/rtl_433/releases/latest
+
+**Known-working Windows 64-bit version (24.10):** https://github.com/merbanan/rtl_433/releases/download/24.10/rtl_433-win-x64-24.10.zip
+
+Version 24.10 is the version used for the original successful Windows setup. Newer versions may differ and should be tested before being described as verified.
 
 ## SDR Driver Installation
 
+Follow the official [NooElec NESDR installation guide](https://support.nooelec.com/hc/en-us/articles/360005298053-NESDR-Installation-Guide) if device names differ. Only replace the driver for the intended SDR device, not an unrelated USB device.
+
+
 1. Plug in the SDR.
-2. Download and run [Zadig](https://zadig.akeo.ie/).
+2. Download and run Zadig.
 3. Select **Options → List All Devices**.
-4. Select the **RTL2832U device**.
-5. Confirm the device shows as **RTL2838UHIDIR or Bulk-In Interface 0**.
-6. Install the **WinUSB driver**.
+4. Select the RTL2832U device.
+5. Confirm the device shows as RTL2838UHIDIR or Bulk-In Interface 0.
+6. Install the WinUSB driver.
 7. Wait for installation to complete.
 8. Disconnect and reconnect the SDR.
 
-![Driver Installation Screenshot](docs/screenshots/sdr-install-zadig.png)
+![Driver Installation](docs/screenshots/sdr-install-zadig.png)
 
 ## Identifying Your Meter
 
@@ -55,9 +62,12 @@ Open the meter box lid and locate the Neptune meter ID.
 
 Record the number exactly as shown.
 
-![Meter ID Location Example](docs/screenshots/meter-id-location.png)
+![Meter ID Location](docs/screenshots/meter-id-location.png)
 
 ## Reading All Meters Within Range
+
+Only collect or retain readings from meters you are authorized to monitor.
+
 
 Open Command Prompt:
 
@@ -79,7 +89,7 @@ While rtl_433 is running:
 
 http://localhost:8433/
 
-![Live View Example](docs/screenshots/rtl433-live-view.png)
+![Live View](docs/screenshots/rtl433-live-view.png)
 
 ## Saving Data to Excel
 
@@ -91,28 +101,24 @@ readings.csv
 
 Open the file directly in Excel.
 
-![Excel Output Example](docs/screenshots/excel-output.png)
+![Excel Output](docs/screenshots/excel-output.png)
 
 ## Reading Only Your Meter
+
+**Important:** The example below filters console text, not the CSV output. Do not rely on it to keep other meter IDs out of `my_meter.csv`. A correctly filtered CSV script still needs verification against real decoder output.
+
 
 Use the included batch file:
 
 ```bat
 @echo off
-REM Set the desired water meter ID and output file
-set "METER_ID=12345678"
-set "OUTPUT_FILE=my_meter_readings.csv"
 
-REM Add a header to the CSV file if it doesn't already exist
-if not exist "%OUTPUT_FILE%" echo Timestamp,ID,Consumption > "%OUTPUT_FILE%"
+set METER_ID=12345678
 
-REM Start rtl_433 and process data for the specified Neptune-R900 ID
-echo Starting rtl_433 for %DURATION% seconds...
-rtl_433 -f 915000000 -R 228 -F http -F json | powershell -Command ^
-    "foreach ($line in $input) { $json = $line | ConvertFrom-Json; if ($json.id -eq %METER_ID%) { Add-Content -Path '%OUTPUT_FILE%' -Value ([string]::Format('{0},{1},{2}', (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'), $json.id, $json.consumption)) } }"
+rtl_433 -f 915000000 -R 228 -F json | findstr /C:"%METER_ID%"
 ```
 
-Replace the meter ID with your own.
+Replace the meter ID with your own. This example displays matching JSON lines in the console; it does not create a CSV. See `examples/read_my_meter.bat`.
 
 ## Understanding Neptune R900 Broadcasts
 
