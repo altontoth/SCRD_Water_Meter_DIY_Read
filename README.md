@@ -77,6 +77,7 @@ Open Command Prompt:
 cd C:\rtl_433-win
 rtl_433 -f 915000000 -R 228 -F http -F csv:readings.csv
 ```
+<img src="docs/assets/cmd-prompt.jpg" width="400" alt="Command Prompt">
 
 This command:
 
@@ -87,11 +88,13 @@ This command:
 
 ## Viewing Live Data
 
-While rtl_433 is running:
+While rtl_433 is running visit:
 
-http://localhost:8433/
+(http://localhost:8433/)
 
-![Live View](docs/assets/rtl433-live-view.png)
+It can take several minutes for data to start to appear depending on distance from meter and other parameters. You can match your meter ID to the ID column reported both in the browser as well as any exported CSV files you create.
+
+<img src="docs/assets/water-meter.png" width="400" alt="Water Meter">
 
 ## Saving Data to Excel
 
@@ -103,7 +106,7 @@ readings.csv
 
 Open the file directly in Excel.
 
-![Excel Output](docs/assets/excel-output.png)
+<img src="docs/assets/sample-excel-file.jpg" width="400" alt="Excel Output">
 
 ## Reading Only Your Meter
 
