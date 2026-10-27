@@ -24,7 +24,7 @@ NooElec NESDR Mini SDR
 
 https://www.amazon.ca/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/
 
-![SDR Receiver](docs/screenshots/sdr-receiver.png)
+![SDR Receiver](docs/assets/sdr-receiver.jpg)
 
 ## Software Required
 
@@ -54,7 +54,7 @@ Follow the official [NooElec NESDR installation guide](https://support.nooelec.c
 7. Wait for installation to complete.
 8. Disconnect and reconnect the SDR.
 
-![Driver Installation](docs/screenshots/sdr-install-zadig.png)
+![Driver Installation](docs/assets/sdr-install-zadig.png)
 
 ## Identifying Your Meter
 
@@ -62,7 +62,7 @@ Open the meter box lid and locate the Neptune meter ID.
 
 Record the number exactly as shown.
 
-![Meter ID Location](docs/screenshots/meter-id-location.png)
+![Meter ID Location](docs/assets/meter-id-location.png)
 
 ## Reading All Meters Within Range
 
@@ -89,7 +89,7 @@ While rtl_433 is running:
 
 http://localhost:8433/
 
-![Live View](docs/screenshots/rtl433-live-view.png)
+![Live View](docs/assets/rtl433-live-view.png)
 
 ## Saving Data to Excel
 
@@ -101,7 +101,7 @@ readings.csv
 
 Open the file directly in Excel.
 
-![Excel Output](docs/screenshots/excel-output.png)
+![Excel Output](docs/assets/excel-output.png)
 
 ## Reading Only Your Meter
 
