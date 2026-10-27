@@ -22,7 +22,7 @@ In testing, the stock antenna was able to receive approximately five nearby wate
 
 NooElec NESDR Mini SDR
 
-https://www.amazon.ca/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/
+[https://www.amazon.ca/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/](https://link.amazon/B0dQ6kY26) (Affiliate Link)
 
 <img src="docs/assets/sdr-receiver.jpg" width="400" alt="SDR Receiver">
 
@@ -90,7 +90,7 @@ This command:
 
 While rtl_433 is running visit:
 
-(http://localhost:8433/)
+http://localhost:8433/
 
 It can take several minutes for data to start to appear depending on distance from meter and other parameters. You can match your meter ID to the ID column reported both in the browser as well as any exported CSV files you create.
 
