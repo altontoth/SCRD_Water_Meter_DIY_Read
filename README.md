@@ -24,7 +24,9 @@ NooElec NESDR Mini SDR
 
 https://www.amazon.ca/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/
 
-![SDR Receiver](docs/assets/sdr-receiver.jpg)
+<p align="center">
+ ![SDR Receiver]<img src="docs/assets/sdr-receiver.jpg" width="500" alt="Water Meter">
+</p>
 
 ## Software Required
 
