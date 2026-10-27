@@ -46,7 +46,7 @@ Follow the official [NooElec NESDR installation guide](https://support.nooelec.c
 
 
 1. Plug in the SDR.
-2. Download and run Zadig.
+2. Download and run [Zadig](https://zadig.akeo.ie/).
 3. Select **Options → List All Devices**.
 4. Select the RTL2832U device.
 5. Confirm the device shows as RTL2838UHIDIR or Bulk-In Interface 0.
