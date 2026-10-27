@@ -24,7 +24,7 @@ NooElec NESDR Mini SDR
 
 https://www.amazon.ca/NooElec-NESDR-Mini-Compatible-Packages/dp/B009U7WZCA/
 
-<img src="docs/assets/sdr-receiver.jpg" width="400" alt="Water Meter">
+<img src="docs/assets/sdr-receiver.jpg" width="400" alt="SDR Receiver">
 
 ## Software Required
 
@@ -54,7 +54,8 @@ Follow the official [NooElec NESDR installation guide](https://support.nooelec.c
 7. Wait for installation to complete.
 8. Disconnect and reconnect the SDR.
 
-![Driver Installation](docs/assets/sdr-install-zadig.png)
+
+<img src="docs/assets/zadig-install.png" width="400" alt="WinUSB Driver Install">
 
 ## Identifying Your Meter
 
@@ -62,7 +63,8 @@ Open the meter box lid and locate the Neptune meter ID.
 
 Record the number exactly as shown.
 
-![Meter ID Location](docs/assets/meter-id-location.png)
+
+<img src="docs/assets/water-meter.png" width="400" alt="Water Meter">
 
 ## Reading All Meters Within Range
 
